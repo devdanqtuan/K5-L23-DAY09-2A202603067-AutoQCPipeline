@@ -65,6 +65,13 @@ Kế hoạch thực nghiệm khi đưa lên môi trường GPU (Google Colab / K
 2. Đo lường mAP50 và mAP50-95 trên tập `data/test/` độc lập (100 ảnh).
 3. So sánh mức chênh lệch trung bình giữa clean và raw với độ lệch chuẩn giữa các seed: nếu mức tăng mAP nhỏ hơn độ lệch chuẩn giữa các seed, ta kết luận sự khác biệt nằm trong độ nhiễu thống kê; các nguyên nhân cần kiểm chứng gồm kích thước tập test nhỏ (100 ảnh) hoặc ảnh rò rỉ trong tập raw đã vô tình làm tăng điểm kiểm tra giả tạo.
 
+| biến thể | #ảnh train | số seed | map50 (TB ± độ lệch) | map50_95 (TB ± độ lệch) | precision (TB ± độ lệch) | recall (TB ± độ lệch) |
+|---|---|---|---|---|---|---|
+| raw | 224 | 2 | 0.726 ± 0.000 | 0.512 ± 0.004 | 0.764 ± 0.061 | 0.649 ± 0.028 |
+| clean | 203 | 2 | 0.695 ± 0.010 | 0.482 ± 0.007 | 0.726 ± 0.005 | 0.619 ± 0.016 |
+
+Chênh mAP50 (clean − raw) = **-0.031**.
+
 ## 6. Quyết định và ghi chú AI
 **(a) Quyết định cuối cùng:**
 Quyết định hiện tại của lô dữ liệu là **Hold**.
